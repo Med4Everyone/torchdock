@@ -1,0 +1,45 @@
+# config.yaml
+
+# base config
+dtype: float32 
+device: cpu                                 # Device to use for computation. Default is 'cpu'. e.g. 'cpu', 'cuda', 'cuda:0', 'cuda:1', etc.
+num_threads: 4                              # Number of CPU threads to use. Default is 4.
+seed: null                                  # Random seed for reproducibility. Default is null (i.e., random seed).
+
+# log config
+log_level: info                             # Logging level. Default is 'info'. e.g.'info', 'warning', 'error',
+console_output: false                       # Whether to output logs to the console. Default is true.
+
+# ligand config
+ligand_max_torsions: 50                     # Maximum number of torsions to use for the ligand. Default is 50.
+
+# protein config
+include_hetatm: true                        # Whether to include hetatm in the protein, e.g. Mn, Zn. Default is false.
+flexible_residue_search_radius: 8.0         # Radius (in Å) around the binding pocket center used to select residues for flexible treatment during automatic setup; default is 8.0 Å.
+
+# Rprop learning rate config
+rprop_lr_position: 0.05
+rprop_lr_orientation: 0.01
+rprop_lr_torsion: 0.1
+rprop_lr_chi: 0.1
+
+# search config
+flex_dock: false                            # Whether to use flexible docking. Default is false.
+batch_size: 200                             # Number of ligand conformers processed in parallel during docking. Default is 100.
+max_restarts: 10                            # Maximum number of optimization rounds. Default is 5.
+max_steps: 500                              # Maximum number of optimization steps per restart before forced termination. Default is 500.
+update_interval: 10                         # Interval (in steps) to check convergence and update pairs. Default is 10.
+convergence_tolerance: 0.05                 # Minimum score change (in kcal/mol) to consider not converged. Default is 0.05 kcal/mol.
+global_convergence_patience: 5              # Number of consecutive search rounds without improvement in the best (lowest) score before early stopping. Default is 3.
+active_ratio_threshold: 0.05                # Stop attempt when ≤5% of conformers remain active (i.e., active ratio ≤ 0.05)
+score_function: vina                         # Score function to use for scoring conformers. Default is 'vina'.
+
+# output config
+rmsd_threshold: 1.0                         # RMSD threshold for filtering redundant conformations. Default is 1.0 Å.
+num_poses: 9                                # Number of top-ranked conformers to save per ligand. Default is 9.
+score_only: false                           # Whether to run in score-only mode. Default is false.
+
+# early stopping config
+early_stop: false                       # Whether to use early stopping. Default is false.
+save_gradient: false                    # Whether to save gradients for the ligand. Default is false.
+early_step_model: default               # Model to use for early stopping. 

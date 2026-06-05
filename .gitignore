@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
+*.log
+
+# Upload cache
+.upload_cache/
+
+# Auto-migrated XGBoost model (generated from .pkl at runtime)
+pretrain_xgboost/*.json
+
+# Example outputs
+example/**/receptor.pdbqt
+example/**/ligand.pdbqt
+example/**/box.json
+example/**/result.pdbqt
+example/**/reference.pdbqt
+example/**/output/

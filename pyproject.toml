@@ -1,0 +1,70 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "torchdock"
+dynamic = ["version"]
+description = "PyTorch-based differentiable molecular docking framework"
+readme = "README.md"
+license = {text = "Apache-2.0"}
+requires-python = ">=3.10"
+authors = [
+    {name = "JINGKUN HU", email = "issey_ice@outlook.com"},
+    {name = "JUNLONG LIU", email = "pingwu.ljl@alibaba-inc.com"},
+    {name = "JI DING", email = "13951909106@163.com"}
+]
+keywords = ["molecular-docking", "drug-discovery", "pytorch", "computational-chemistry"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Chemistry",
+]
+
+# Core dependencies (all pip-installable)
+dependencies = [
+    "torch>=2.0",
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "pandas>=2.0",
+    "scikit-learn>=1.3",
+    "pyyaml>=6.0",
+    "tqdm>=4.60",
+    "biopython>=1.80",
+    "rdkit>=2023.09",
+    "xgboost>=2.0",
+    "matplotlib>=3.7",
+    "spyrmsd>=0.6",
+    "smac>=2.0",
+]
+
+[project.optional-dependencies]
+# Development dependencies
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Med4Everyone/torchdock"
+Repository = "https://github.com/Med4Everyone/torchdock"
+Issues = "https://github.com/Med4Everyone/torchdock/issues"
+
+[project.scripts]
+torchdock = "torchdock.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["torchdock*"]
+
+[tool.setuptools.package-data]
+torchdock = ["config/*.yaml", "pretrain_xgboost/*.pkl", "pretrain_xgboost/*.json"]
+
+[tool.setuptools.dynamic]
+version = {attr = "torchdock.__version__"}
