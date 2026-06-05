@@ -1,12 +1,10 @@
 # TorchDock
 
-<!-- Badges（发布后取消注释） -->
+<!-- Badges -->
 
-<!-- [![PyPI version](https://badge.fury.io/py/torchdock.svg)](https://pypi.org/project/torchdock/) -->
-
-<!-- [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) -->
-
-<!-- [![Python](https://img.shields.io/badge/python-3.10%2B-blue)]() -->
+[![PyPI version](https://badge.fury.io/py/torchdock.svg)](https://pypi.org/project/torchdock/)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Python](https://img.shields.io/badge/python-3.10%2B-blue)]()
 
 > 基于 PyTorch 的可微分子对接框架
 
