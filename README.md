@@ -34,6 +34,8 @@ TorchDock reimplements classical empirical scoring functions (Vina, Vinardo) as 
 
 TorchDock requires **Python ≥ 3.10** and **OpenBabel**.
 
+> **Platform note:** TorchDock is developed and tested on Linux (Ubuntu 22.04). macOS may work but is untested. Windows users can run TorchDock via [WSL](https://learn.microsoft.com/en-us/windows/wsl/install).
+
 ### Step 1: Create conda environment and install OpenBabel
 
 ```bash
